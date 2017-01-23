@@ -1,0 +1,34 @@
+
+server:
+  port: 9090
+  
+spring:
+  application:
+    name: eureka.client
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7070/eureka/
+    registry-fetch-interval-seconds: 5  
+  instance:
+    appname: eureka.client.01
+    lease-renewal-interval-in-seconds: 10
+    #metadataMap:
+     # instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+     
+feign.httpclient.enable: false
+feign.okhttp.enabled: true
+hystrix.command.default.execution.isolation.thread.timeoutInMilliseconds: 5000
+
+logging:
+  level: DEBUG
+
+zuul:
+  routes:
+    service1:
+      path: /service1/**
+      service-id: service  
+
+
+

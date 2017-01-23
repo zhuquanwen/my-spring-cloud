@@ -1,0 +1,21 @@
+#server.port=9090
+#spring.application.name=turbine
+#turbine.appConfig=node01,node02
+#turbine.aggregator.clusterConfig= MAIN
+#turbine.clusterNameExpression= metadata['cluster']
+
+server:
+  port: 9091
+spring:
+  application:
+    name: turbine
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7070/eureka/
+      
+turbine.appConfig: eureka.client.02,eureka.client.03
+turbine.aggregator.clusterConfig: MAIN
+turbine.clusterNameExpression: metadata['cluster']  
+  

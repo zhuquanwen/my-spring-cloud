@@ -1,0 +1,29 @@
+
+server:
+  port: 9081
+  
+spring:
+  application:
+    name: service
+  cloud:
+    config:
+      enabled: true
+      discovery:
+        enabled: true
+        service-id: config
+  
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7070/eureka/
+  instance:
+    hostname: eureka2
+    #metadataMap:
+     # instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+        
+    
+spring.rabbitmq.host: localhost
+spring.rabbitmq.port: 5672
+spring.rabbitmq.username: config
+spring.rabbitmq.password: config
+

@@ -1,0 +1,18 @@
+#server.port= 8081 
+#spring.application.name=node01 
+#eureka.instance.hostname=localhost 
+#eureka.instance.metadata-map.cluster=MAIN 
+server:
+  port: 8081
+spring:
+  application:
+    name: node01
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7070/eureka/
+  instance:
+    hostname: eureka2
+    appname: eureka.client.02    
+eureka.instance.metadata-map.cluster: MAIN
+   

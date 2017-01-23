@@ -1,0 +1,15 @@
+server:
+  port: 7071
+spring:
+  application:
+    name: server-01
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://eureka1:7070/eureka/,http://eureka3:7072/eureka/
+    #register-with-eureka: false
+    #fetch-registry: false
+  instance:
+    hostname: eureka2
+    #metadataMap:
+     # instanceId: ${spring.application.name}:${spring.application.instance_id:${random.value}}
