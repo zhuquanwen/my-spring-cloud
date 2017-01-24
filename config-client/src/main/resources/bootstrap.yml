@@ -1,0 +1,12 @@
+#spring.application.name: foo
+#spring.cloud.config.env:default
+#spring.cloud.config.label:master
+#spring.cloud.config.uri:http://localhost:8888
+
+spring:
+  application:
+    name: foo
+  cloud:
+    config:
+      label: master
+      uri: http://localhost:8888

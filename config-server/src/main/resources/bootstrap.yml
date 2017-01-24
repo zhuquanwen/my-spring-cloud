@@ -1,0 +1,24 @@
+spring:
+  cloud:
+    config:
+      server:
+        native:
+          search-locations: classpath:/config 
+  application:
+    name: config 
+  profiles:
+    active: native 
+    
+    
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:7070/eureka/
+    registry-fetch-interval-seconds: 5  
+  instance:
+    hostname: eureka1
+    lease-renewal-interval-in-seconds: 10
+    
+
+    
+        
